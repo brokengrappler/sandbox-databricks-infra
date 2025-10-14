@@ -7,4 +7,6 @@ terraform {
   }
 }
 
-provider "databricks" {}
+provider "databricks" {
+  alias = "workspace"
+}
