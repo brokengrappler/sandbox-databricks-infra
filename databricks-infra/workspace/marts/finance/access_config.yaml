@@ -1,0 +1,23 @@
+roles:
+  data-engineers:
+    catalogs:
+      finance_dev:
+        privilege: RW
+        schemas:
+          - bronze
+          - silver
+          - gold
+  finance-analysts:
+    catalogs:
+      finance_dev:
+        privilege: RO
+        schemas:
+          - bronze
+          - silver
+          - gold
+      finance_prod:
+        privilege: RO
+        schemas:
+          - bronze
+          - silver
+          - gold

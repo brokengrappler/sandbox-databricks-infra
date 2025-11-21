@@ -2,7 +2,6 @@
 
 # Grant access to the cluster policy if an ID is provided
 resource "databricks_permissions" "cluster_policy_usage" {
-  # Only create this resource if cluster_policy_id is not null
   count = var.cluster_policy_id != null ? 1 : 0
 
   cluster_policy_id = var.cluster_policy_id
@@ -12,7 +11,7 @@ resource "databricks_permissions" "cluster_policy_usage" {
   }
 }
 
-# Grant access to the SQL warehouse if an ID is provided
+
 resource "databricks_permissions" "sql_warehouse_usage" {
   count = var.sql_warehouse_id != null ? 1 : 0
 
