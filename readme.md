@@ -1,6 +1,13 @@
 # Databricks Infrastructure as Code
 
-Sandboxing infrastructure code for Databricks workspaces, Unity Catalog, and access controls.
+Sandboxing infrastructure code for Databricks workspaces, Unity Catalog, and access controls. 
+
+The goal is to be able to create a name-space representing a mart using a single module that automatically sets up:
+1) ```DEV``` and ```PROD``` catalogs with default bronze/silver/gold schemas
+2) Roles and permissions for the catalog determined based on the access_config.yaml
+3) Default cluster access and policies
+
+We want flexibility for each team/mart but when patterns form, additional modules can be created to encapsulate those patterns.
 
 ## Table of Contents
 
@@ -8,9 +15,7 @@ Sandboxing infrastructure code for Databricks workspaces, Unity Catalog, and acc
 - [Prerequisites](#prerequisites)
 - [Folder Structure](#folder-structure)
 - [Getting Started](#getting-started)
-- [Module Documentation](#module-documentation)
 - [Access Control Configuration](#access-control-configuration)
-- [Usage Examples](#usage-examples)
 
 ---
 
@@ -53,7 +58,7 @@ This repository manages Databricks infrastructure using:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/brokengrappler/sandbox-databricks-infra.git
 cd databricks-infra
 ```
 
@@ -87,11 +92,6 @@ terraform apply
 ```
 
 ---
-## Hypothesis
-The goal is to be able to create a name-space representing a mart using a single module that automatically sets up:
-1) ```DEV``` and ```PROD``` catalogs with default bronze/silver/gold schemas
-2) Roles and permissions for the catalog determined based on the access_config.yaml
-3) Default cluster access and policies 
 
 ## Folder Structure
 
@@ -151,4 +151,3 @@ databricks-infra/
   - `SELECT`, `MODIFY`, `CREATE_TABLE` on all tables in the schemas
 
 ---
-
