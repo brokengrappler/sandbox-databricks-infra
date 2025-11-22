@@ -10,3 +10,7 @@ crash.log
 crash.*.log
 
 .idea/
+
+# Terraform variable files with sensitive data
+*.tfvars
+!*.tfvars.example

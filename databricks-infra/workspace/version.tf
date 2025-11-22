@@ -10,5 +10,8 @@ terraform {
 
 provider "databricks" {
   alias = "workspace"
+  host          = var.workspace_host
+  client_id     = var.client_id
+  client_secret = var.client_secret
 }
 
